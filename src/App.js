@@ -7,7 +7,9 @@ import { getDatabase, ref, onValue, child, get } from 'firebase/database';
 import IntakePanel from './components/intakePanel';
 import IntroPanel from './components/introPanel';
 
-const valuesDBPath = '/values'
+const valuesDBPath = '/values';
+const namesDBPath = '/names';
+
 let valueList;
 let nameList;
 let selectedValues = {};
@@ -28,10 +30,20 @@ const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 // 🔥🔥🔥 Firebase 🔥🔥🔥
 
-// console.log(database);
 
-// gets the value list once (does not update dynamically)
-let getValueList = () => {
+// downloads the name list and updates whenever there's a change.
+let fetchNameList = () => {
+  const dbRef = ref(database, namesDBPath, );
+  onValue(dbRef, (snapshot) => {
+    const data = snapshot.val();
+    nameList = data;
+    console.log ('name list updated')
+  })
+}
+
+
+// downloads the value list *once* (does not update dynamically)
+let fetchValueList = () => {
 
   const dbRef = ref(database);
 
@@ -39,14 +51,13 @@ let getValueList = () => {
     if (snapshot.exists()) {
 
       valueList = snapshot.val();
-      console.log(valueList);
+      console.log('value list updated');
     } else {
       console.log("Values were not read");
     }
   }).catch((error) => {
     console.error(error);
   });
-
 
 }
 
@@ -379,7 +390,8 @@ class App extends Component {
     this.state = {
     };
 
-    getValueList();
+    fetchValueList();
+    fetchNameList();
 }
 
 
