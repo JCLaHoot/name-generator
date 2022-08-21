@@ -42,7 +42,6 @@ class ValueListView extends Component {
     render() {
         return (
             <div className="values-list">
-                <p>Values list</p>
                 {this.valueListItems()}
             </div>
             

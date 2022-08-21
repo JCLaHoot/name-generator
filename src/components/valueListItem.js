@@ -23,8 +23,9 @@ class ValueListItem extends Component {
         
         return (
             <button className={className} onClick={this.pressAction}>
-                {this.props.icon ? this.props.icon : "🔥"}
-                {this.props.label ? this.props.label : "generic value"}                
+                <span className={'icon'}>{this.props.icon ? this.props.icon : "🔥"}</span>
+                <span className={'name'}>{this.props.label ? this.props.label : "generic value"}</span>
+                               
             </button>
             
         )
