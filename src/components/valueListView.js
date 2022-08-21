@@ -44,11 +44,6 @@ class ValueListView extends Component {
             <div className="values-list">
                 <p>Values list</p>
                 {this.valueListItems()}
-                <ValueListItem label="love" icon="❤️"/>
-                <ValueListItem/>
-                <ValueListItem/>
-                <ValueListItem/>
-                
             </div>
             
         )

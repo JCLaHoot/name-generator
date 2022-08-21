@@ -15,12 +15,16 @@ class ValueListItem extends Component {
     }
 
     render() {
+
+        let className = 'value-list-item';
+        if (this.state.selected) {
+          className += ' selected';
+        }
+        
         return (
-            <button className="value-list-item" onClick={this.pressAction}>
-                {this.props.label ? this.props.label : "generic value"}
+            <button className={className} onClick={this.pressAction}>
                 {this.props.icon ? this.props.icon : "🔥"}
-                { + this.state.selected ? "true" : "false"}
-                
+                {this.props.label ? this.props.label : "generic value"}                
             </button>
             
         )
