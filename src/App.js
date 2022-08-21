@@ -6,11 +6,13 @@ import { getDatabase, ref, onValue, child, get } from 'firebase/database';
 
 import IntakePanel from './components/intakePanel';
 import IntroPanel from './components/introPanel';
+import ValuesPanel from './components/valuesPanel';
+import OutputPanel from './components/outputPanel';
 
 const valuesDBPath = '/values';
 const namesDBPath = '/names';
 
-let valueList;
+// let valueList;
 let nameList;
 let selectedValues = {};
 let chosenWord;
@@ -31,39 +33,10 @@ const database = getDatabase(firebaseApp);
 // 🔥🔥🔥 Firebase 🔥🔥🔥
 
 
-// downloads the name list and updates whenever there's a change.
-let fetchNameList = () => {
-  const dbRef = ref(database, namesDBPath, );
-  onValue(dbRef, (snapshot) => {
-    const data = snapshot.val();
-    nameList = data;
-    console.log ('name list updated')
-  })
-}
-
-
-// downloads the value list *once* (does not update dynamically)
-let fetchValueList = () => {
-
-  const dbRef = ref(database);
-
-  get(child(dbRef, valuesDBPath)).then((snapshot) => {
-    if (snapshot.exists()) {
-
-      valueList = snapshot.val();
-      console.log('value list updated');
-    } else {
-      console.log("Values were not read");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-
-}
 
 
 
-// 🏭 🏷 gets the names and the values from their JSON files.
+// ✅🏭 🏷 gets the names and the values from their JSON files.
 // There's almost certainly a better way to do this! 😅
 // fetchJSON = () => {
 
@@ -385,17 +358,51 @@ let fetchValueList = () => {
 
 class App extends Component {
 
+
+
   constructor(props) {
     super(props);
     this.state = {
-    };
+      values : null
 
-    fetchValueList();
-    fetchNameList();
-}
+    };   
+  } 
+
+
+  // downloads the value list *once* (does not update dynamically)
+  fetchValueList = () => {
+
+    const dbRef = ref(database);
+
+    get(child(dbRef, valuesDBPath)).then((snapshot) => {
+      if (snapshot.exists()) {
+
+        this.setState({values : snapshot.val()})
+        console.log('value list updated');
+      } else {
+        console.log("Values were not read");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+
+  }
+
+  // downloads the name list and updates whenever there's a change.
+  fetchNameList = () => {
+    const dbRef = ref(database, namesDBPath, );
+    onValue(dbRef, (snapshot) => {
+      const data = snapshot.val();
+      nameList = data;
+      console.log ('name list updated')
+    })
+  }
 
 
   componentDidMount() {
+    this.fetchValueList();
+    this.fetchNameList();
+
   }
   
 
@@ -406,7 +413,9 @@ class App extends Component {
           <div>
           <p>🔥✨👨🏼‍💻✨🔥</p>
             <IntroPanel/>
-            <IntakePanel/>
+            <IntakePanel valueList={this.state.values}/>
+            <ValuesPanel/>
+            <OutputPanel/>
           </div>
       </div>
           

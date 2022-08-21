@@ -1,12 +1,15 @@
 import React, {Component} from "react";
-import ValuesList from "./valuesList";
+import ValueListView from "./valueListView";
 
 class IntakePanel extends Component {
+
+    
     render() {
+        // console.log(this.props.valueList);
         return (
             <div className="intake-panel">
                 <p>intake panel</p>
-                <ValuesList/>
+                <ValueListView valueList={this.props.valueList}/>
             </div>
             
         )

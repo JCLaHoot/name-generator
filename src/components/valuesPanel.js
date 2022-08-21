@@ -1,14 +1,14 @@
 import React, {Component} from "react";
 
-class IntroPanel extends Component {
+class ValuesPanel extends Component {
     render() {
         return (
             <div className="intro-panel">
-                <p>intro Panel</p>
+                <p>Values Panel</p>
             </div>
             
         )
     }
 }
 
-export default IntroPanel;
+export default ValuesPanel;
