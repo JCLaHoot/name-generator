@@ -410,15 +410,17 @@ class App extends Component {
   render() {
       return (
         <div className="App">
-          <p>🔥✨👨🏼‍💻✨🔥</p>
-            <IntroPanel/>
-            <div className='machine'>
+          <IntroPanel/>
+          <div className='machine'>
+            <div className='first-section'>
               <IntakePanel valueList={this.state.values}/>
+            </div>
+            <div className='second-section'>
               <ValuesPanel/>
               <OutputPanel/>
             </div>
-      </div>
-          
+          </div>
+        </div>
       )
   }
 

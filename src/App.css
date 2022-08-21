@@ -144,32 +144,114 @@ h2 {
   ========================================
 */
 
-/* @media (max-width: 600px) {
-    body {
-        font-size: 75%;
-    }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
-@media (min-width: 601px) {
-    body {
-        font-size: 90%;
-    }
+
+.intro-panel{
+  height: 100px;
+  width: 100%;
 }
 
-@media (min-width: 993px) {
-    body {
-        font-size: 100%;
-    }
-} */
+.machine {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.intake-panel{
+  width: 100%;
+}
+
+.machine .second-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+}
+
+
+
+@media (max-width: 767px) {
+
+  .App{
+    margin: 32px 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .App{
+    margin: 32px 40px;
+    gap: 64px;
+  }
+  
+  .intro-panel{
+    max-width: 712px;
+  }
+
+  .machine {
+    max-width: 896px;
+  }
+
+  .intake-panel{
+    width: calc(100% - 124px);
+  }
+  
+
+}
+
+@media (min-width: 1024px) {
+  .App{
+    margin: 32px 64px;
+  }
+
+  .machine {
+    flex-direction: row;
+    gap: 64px;
+    max-width: none;
+  }
+
+  .intake-panel{
+  width: 100%;
+}
+
+  .machine .second-section {
+    gap: 64px;
+  }
+  
+
+}
+
+@media (min-width: 1400px) {
+  .App {
+    margin: 88px 64px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .intro-panel{
+    max-width: 416px;
+  }
+
+}
 
 
 /*
   ========================================
-  Header
+  App
   ========================================
 */
 
-
+.App {
+  display: flex;
+}
 
 
 
@@ -181,7 +263,8 @@ h2 {
 */
 
 .intro-panel{
-  background-color: gray;
+
+  background-color: blueviolet;
 }
 
 /*
@@ -191,7 +274,7 @@ h2 {
 */
 
 .intake-panel{
-  background-color: gray;
+  background-color: green;
 }
 
 .values-list {
@@ -230,6 +313,8 @@ h2 {
 */
 
 .values-panel{
+  height: 100px;
+
   background-color: gray;
 }
 
@@ -241,7 +326,8 @@ h2 {
 */
 
 .output-panel{
-  background-color: gray;
+  height: 100px;
+  background-color: red;
 }
 
 /*
