@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import OrnateLabel from "./ornateLabel";
 import ValueListView from "./valueListView";
 
 class IntakePanel extends Component {
@@ -8,7 +9,7 @@ class IntakePanel extends Component {
         // console.log(this.props.valueList);
         return (
             <div className="intake-panel">
-                <p>intake panel</p>
+                <OrnateLabel content={"Values"}/>
                 <ValueListView valueList={this.props.valueList}/>
             </div>
             
