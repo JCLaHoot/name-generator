@@ -9,7 +9,7 @@ class IntakePanel extends Component {
         // console.log(this.props.valueList);
         return (
             <div className="intake-panel">
-                <OrnateLabel content={"Values"}/>
+                <OrnateLabel>Values</OrnateLabel>
                 <ValueListView valueList={this.props.valueList}/>
             </div>
             

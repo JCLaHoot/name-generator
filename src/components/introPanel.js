@@ -5,7 +5,7 @@ class IntroPanel extends Component {
     render() {
         return (
             <div className="intro-panel">
-                <OrnateLabel content={"Word Tagging Machine"}/>
+                <OrnateLabel>Word Tagging Machine</OrnateLabel>
             </div>
             
         )

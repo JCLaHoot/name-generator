@@ -3,12 +3,12 @@ import Frame from "./frame";
 
 
 
-const OrnateLabel = ({content}) => {
+const OrnateLabel = (props) => {
 
 
     return (
         <div className="ornate-label">
-            <Frame size='thin'>{content}</Frame>
+            <Frame size='thin'>{props.children}</Frame>
         </div>
     )
 
