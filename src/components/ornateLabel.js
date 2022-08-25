@@ -1,11 +1,14 @@
 import React from "react";
+import Frame from "./frame";
+
+
 
 const OrnateLabel = ({content}) => {
 
 
     return (
-        <div>
-            <span>{content}</span>
+        <div className="ornate-label">
+            <Frame size='thin'>{content}</Frame>
         </div>
     )
 
