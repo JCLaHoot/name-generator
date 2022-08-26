@@ -382,14 +382,49 @@ h2 {
   background: var(--brass-reflective);
   box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4);
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+}
 
+.frame .rivet {
+  position: absolute;
+  border-radius: 100%;
 
+  background: var(--brass-reflective);
+  box-shadow: inset 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
 
 }
+
+.frame .rivet:nth-child(1) {
+  top: 4px;
+  left: 4px;
+}
+
+.frame .rivet:nth-child(2) {
+  top: 4px;
+  right: 4px;
+}
+
+.frame .rivet:nth-child(3) {
+  bottom: 4px;
+  right: 4px;
+}
+
+.frame .rivet:nth-child(4) {
+  bottom: 4px;
+  left: 4px;
+}
+
 
 .frame.thin {
   padding: 8px;
+
 }
+
+.frame.thin .rivet {
+  width: 4px;
+  height: 4px;
+}
+
 
 /*
   ========================================

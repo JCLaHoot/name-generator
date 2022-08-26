@@ -18,6 +18,10 @@ const Frame = (props) => {
 
     return (
         <div className={`frame ${className}`}>
+            <div className="rivet"></div>
+            <div className="rivet"></div>
+            <div className="rivet"></div>
+            <div className="rivet"></div>
             {props.children}
         </div>
     )
