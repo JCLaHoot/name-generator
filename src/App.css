@@ -86,7 +86,7 @@ table {
   ========================================
 */
 
-@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=La+Belle+Aurore&display=swap');
 
 
 /*
@@ -101,6 +101,19 @@ table {
   --parchment: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(242, 225, 179, 0.65) 100%), #FCF9F1;
   --parchment-glow: radial-gradient(50% 50% at 50% 50%, #FFDBAA 0%, rgba(255, 255, 255, 0) 100%), #FFC44E;
   --machine-frame: linear-gradient(173.12deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #242527;
+  --brass-reflective: linear-gradient(123.49deg, rgba(255, 255, 255, 0.2) 0%, rgba(173, 173, 173, 0.2) 27.6%, rgba(112, 112, 112, 0.2) 55.21%, rgba(0, 0, 0, 0.2) 80.73%, rgba(0, 0, 0, 0.2) 100%), #644F19;
+
+  --banking-green: #234E2C;
+  --jumpsuit-blue: #18445C;
+
+  --brass-01: #FFEFBD;
+  --brass-02: #FFE183;
+  --brass-03: #FFCE33;
+  --brass-04: #9F801C;
+  --brass-05: #644F19;
+  
+
+
 }
 
 
@@ -356,3 +369,50 @@ h2 {
   Footer
   ========================================
 */
+
+/*
+  ========================================
+  Frame
+  ========================================
+*/
+
+.frame {
+  display: inline-block;
+  border-radius: 8px;
+  background: var(--brass-reflective);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+
+
+
+}
+
+.frame.thin {
+  padding: 8px;
+}
+
+/*
+  ========================================
+  Labels
+  ========================================
+*/
+
+.ornate-label .inner-content {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  background-color: var(--banking-green);
+  color: var(--brass-03);
+  font-size: 1.5em;
+  font-family: 'cinzel decorative', serif;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4));
+
+
+
+
+}
+
+
+

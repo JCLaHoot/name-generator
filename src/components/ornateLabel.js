@@ -8,7 +8,7 @@ const OrnateLabel = (props) => {
 
     return (
         <div className="ornate-label">
-            <Frame size='thin'>{props.children}</Frame>
+            <Frame size='thin'><span className="inner-content">{props.children}</span></Frame>
         </div>
     )
 

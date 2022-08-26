@@ -17,7 +17,7 @@ const Frame = (props) => {
 
 
     return (
-        <div className={className}>
+        <div className={`frame ${className}`}>
             {props.children}
         </div>
     )
