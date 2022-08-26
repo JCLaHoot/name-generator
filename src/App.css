@@ -306,6 +306,11 @@ h2 {
 .intake-panel{
   background: var(--machine-frame);
   padding: 24px;
+  width: auto;
+
+  border-radius: 4px;
+    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4));
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .values-list {
@@ -313,6 +318,10 @@ h2 {
   flex-direction: column;
   overflow: scroll;
   height: 500px;
+
+  border-radius: 4px;
+  /* filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4));
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5); */
 }
 
 .value-list-item {
@@ -394,24 +403,44 @@ h2 {
 
 }
 
-.frame .rivet:nth-child(1) {
+.frame.thin .rivet:nth-child(1) {
   top: 4px;
   left: 4px;
 }
 
-.frame .rivet:nth-child(2) {
+.frame.thin .rivet:nth-child(2) {
   top: 4px;
   right: 4px;
 }
 
-.frame .rivet:nth-child(3) {
+.frame.thin .rivet:nth-child(3) {
   bottom: 4px;
   right: 4px;
 }
 
-.frame .rivet:nth-child(4) {
+.frame.thin .rivet:nth-child(4) {
   bottom: 4px;
   left: 4px;
+}
+
+.frame.thicc .rivet:nth-child(1) {
+  top: 6px;
+  left: 6px;
+}
+
+.frame.thicc .rivet:nth-child(2) {
+  top: 6px;
+  right: 6px;
+}
+
+.frame.thicc .rivet:nth-child(3) {
+  bottom: 6px;
+  right: 6px;
+}
+
+.frame.thicc .rivet:nth-child(4) {
+  bottom: 6px;
+  left: 6px;
 }
 
 
@@ -425,6 +454,16 @@ h2 {
   height: 4px;
 }
 
+
+.frame.thicc {
+  padding: 16px;
+
+}
+
+.frame.thicc .rivet {
+  width: 8px;
+  height: 8px;
+}
 
 /*
   ========================================

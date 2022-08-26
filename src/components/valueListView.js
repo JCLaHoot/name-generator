@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ValueListItem from "./valueListItem";
+import Frame from "./frame";
 
 
 class ValueListView extends Component {
@@ -41,9 +42,11 @@ class ValueListView extends Component {
 
     render() {
         return (
-            <div className="values-list">
-                {this.valueListItems()}
-            </div>
+            <Frame size='thin'>
+                <div className="values-list">
+                    {this.valueListItems()}
+                </div>
+            </Frame>
             
         )
     }
