@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ValueListItem from "./valueListItem";
 import Frame from "./frame";
+import Spacer from "./spacer";
 
 
 class ValueListView extends Component {
@@ -26,6 +27,7 @@ class ValueListView extends Component {
                 let value = this.props.valueList[i];
 
                 valueListItems.push(<ValueListItem label={value.name} icon={value.icon}/>)
+                valueListItems.push(<Spacer size='thin'/>)
 
               }
 
