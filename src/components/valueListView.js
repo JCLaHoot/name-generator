@@ -42,11 +42,11 @@ class ValueListView extends Component {
 
     render() {
         return (
-            <Frame size='thin'>
+            // <Frame size='thin'>
                 <div className="values-list">
                     {this.valueListItems()}
                 </div>
-            </Frame>
+            // </Frame>
             
         )
     }

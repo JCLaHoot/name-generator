@@ -9,12 +9,16 @@ class IntakePanel extends Component {
     render() {
         // console.log(this.props.valueList);
         return (
-            <Frame>
+            
             <div className="intake-panel">
-                <OrnateLabel>Values</OrnateLabel>
-                <ValueListView valueList={this.props.valueList}/>
+                {/* <Frame size='thicc'> */}
+                    <div className="values-block">
+                        <OrnateLabel>Values</OrnateLabel>
+                        <ValueListView valueList={this.props.valueList}/>
+                    </div>
+                {/* </Frame> */}
+
             </div>
-            </Frame>
 
             
         )
