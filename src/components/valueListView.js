@@ -26,8 +26,13 @@ class ValueListView extends Component {
             for (const i in this.props.valueList) {
                 let value = this.props.valueList[i];
 
+                // adds a spacer between all items 
+                if(valueListItems.length){
+                    valueListItems.push(<Spacer size='thin'/>);
+                }
+
                 valueListItems.push(<ValueListItem label={value.name} icon={value.icon}/>)
-                valueListItems.push(<Spacer size='thin'/>)
+                // valueListItems.push(<Spacer size='thin'/>)
 
               }
 
