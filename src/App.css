@@ -485,8 +485,11 @@ h2 {
 
 .values-panel{
   box-sizing: border-box;
-  height: 100px;
-
+  min-height: 200px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  padding: 8px;
   background: var(--machine-frame);
 }
 
@@ -659,5 +662,30 @@ h2 {
 }
 
 
+/*
+  ========================================
+  Value Sliders
+  ========================================
+*/
 
+.value-slider-plate {
+  flex-grow: 1;
+
+}
+
+.value-slider-plate .frame {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.value-slider-plate .frame .inner-content {
+  background-color: var(--banking-green);
+  width: 100%;
+  height: 100%;
+
+  border-radius: 4px;
+  box-shadow: inset 2px 2px 2px rgb(0 0 0 / 25%);
+    filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4));
+}
 
