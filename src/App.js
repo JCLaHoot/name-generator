@@ -363,10 +363,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      tagging : true,
       values : null
 
     };   
   } 
+
+  if
 
 
   // downloads the value list *once* (does not update dynamically)
@@ -402,7 +405,6 @@ class App extends Component {
   componentDidMount() {
     this.fetchValueList();
     this.fetchNameList();
-
   }
   
 
@@ -410,14 +412,14 @@ class App extends Component {
   render() {
       return (
         <div className="App">
-          <IntroPanel/>
+          <IntroPanel tagging={this.state.tagging}/>
           <div className='machine'>
             <div className='first-section'>
-              <IntakePanel valueList={this.state.values}/>
+              <IntakePanel valueList={this.state.values} tagging={this.state.tagging}/>
             </div>
             <div className='second-section'>
-              <ValuesPanel/>
-              <OutputPanel/>
+              <ValuesPanel tagging={this.state.tagging}/>
+              <OutputPanel tagging={this.state.tagging}/>
             </div>
           </div>
         </div>
