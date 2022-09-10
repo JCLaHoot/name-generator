@@ -12,6 +12,7 @@ class ValueListItem extends Component {
     pressAction = () => {
         let newSelectedState = this.state.selected ? false : true
         this.setState({selected : newSelectedState})
+        this.props.updateSelectedValues();
     }
 
     render() {

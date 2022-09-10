@@ -31,7 +31,7 @@ class IntakePanel extends Component {
                     {this.wordToTag()}
                     <div className="values-block">
                         <OrnateLabel>Values</OrnateLabel>
-                        <ValueListView valueList={this.props.valueList}/>
+                        <ValueListView valueList={this.props.valueList} updateSelectedValues={this.props.updateSelectedValues}/>
                     </div>
                 {/* </Frame> */}
 

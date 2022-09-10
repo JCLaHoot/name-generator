@@ -364,12 +364,15 @@ class App extends Component {
     super(props);
     this.state = {
       tagging : true,
-      values : null
+      values : null,
+      selectedValues: []
 
     };   
   } 
 
-  if
+  updateSelectedValues = () => {
+    console.log('⭐')
+  }
 
 
   // downloads the value list *once* (does not update dynamically)
@@ -415,7 +418,7 @@ class App extends Component {
           <IntroPanel tagging={this.state.tagging}/>
           <div className='machine'>
             <div className='first-section'>
-              <IntakePanel valueList={this.state.values} tagging={this.state.tagging}/>
+              <IntakePanel valueList={this.state.values} tagging={this.state.tagging} updateSelectedValues={this.updateSelectedValues}/>
             </div>
             <div className='second-section'>
               <ValuesPanel tagging={this.state.tagging}/>

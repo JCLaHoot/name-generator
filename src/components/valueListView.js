@@ -31,8 +31,9 @@ class ValueListView extends Component {
                     valueListItems.push(<Spacer size='thin'/>);
                 }
 
-                valueListItems.push(<ValueListItem label={value.name} icon={value.icon}/>)
+                valueListItems.push(<ValueListItem label={value.name} icon={value.icon} updateSelectedValues={this.props.updateSelectedValues}/>)
                 // valueListItems.push(<Spacer size='thin'/>)
+                
 
               }
 
