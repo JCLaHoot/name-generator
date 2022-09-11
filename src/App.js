@@ -370,8 +370,23 @@ class App extends Component {
     };   
   } 
 
-  updateSelectedValues = () => {
-    console.log('⭐')
+  updateSelectedValues = (value, selected) => {
+    let newValues = this.state.selectedValues;
+
+    if (selected) {
+      newValues.push(value);
+      this.setState({selectedValues : newValues})
+    }
+    else {
+      for (let i = 0; i < newValues.length; i++) {
+        if (newValues[i] === value) {
+          newValues.splice(i, 1);
+        }
+      }
+    }
+
+
+    console.log(this.state.selectedValues)
   }
 
 

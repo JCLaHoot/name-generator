@@ -8,11 +8,14 @@ class ValueListItem extends Component {
             selected : false
         };
     }
+
+    value = this.props.value;
     
     pressAction = () => {
         let newSelectedState = this.state.selected ? false : true
         this.setState({selected : newSelectedState})
-        this.props.updateSelectedValues();
+
+        this.props.callback(this.value, newSelectedState);
     }
 
     render() {
@@ -24,8 +27,8 @@ class ValueListItem extends Component {
         
         return (
             <button className={className} onClick={this.pressAction}>
-                <span className={'icon'}>{this.props.icon ? this.props.icon : "🔥"}</span>
-                <span className={'name'}>{this.props.label ? this.props.label : "generic value"}</span>
+                <span className={'icon'}>{this.value.icon ? this.value.icon : "🔥"}</span>
+                <span className={'name'}>{this.value.name ? this.value.name : "generic value"}</span>
                                
             </button>
             

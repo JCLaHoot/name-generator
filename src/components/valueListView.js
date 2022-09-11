@@ -8,7 +8,7 @@ class ValueListView extends Component {
 
     
     componentDidUpdate() {
-        console.log(this.props.valueList);
+        // console.log(this.props.valueList);
         // console.log(Object.keys(this.props.valueList));
         // console.log(this.props.valueList)
         
@@ -31,7 +31,7 @@ class ValueListView extends Component {
                     valueListItems.push(<Spacer size='thin'/>);
                 }
 
-                valueListItems.push(<ValueListItem label={value.name} icon={value.icon} updateSelectedValues={this.props.updateSelectedValues}/>)
+                valueListItems.push(<ValueListItem value={value} callback={this.props.updateSelectedValues}/>)
                 // valueListItems.push(<Spacer size='thin'/>)
                 
 
