@@ -370,6 +370,7 @@ class App extends Component {
     };   
   } 
 
+  // callback to update the selected values
   updateSelectedValues = (value, selected) => {
     let newValues = this.state.selectedValues;
 
@@ -383,6 +384,7 @@ class App extends Component {
           newValues.splice(i, 1);
         }
       }
+      this.setState({selectedValues : newValues})
     }
 
 
@@ -436,7 +438,7 @@ class App extends Component {
               <IntakePanel valueList={this.state.values} tagging={this.state.tagging} updateSelectedValues={this.updateSelectedValues}/>
             </div>
             <div className='second-section'>
-              <ValuesPanel tagging={this.state.tagging}/>
+              <ValuesPanel selectedValues={this.state.selectedValues} tagging={this.state.tagging}/>
               <OutputPanel tagging={this.state.tagging}/>
             </div>
           </div>

@@ -7,11 +7,27 @@ class ValueSlider extends Component {
         super(props);
         this.state = {
             active: false,
-            value: null,
-            icon: null,
             sliderValue: 0
         };
     }
+
+    value = this.props.value;
+    icon = null;
+
+
+    getIcon = () => {
+        if(this.props.value) {
+            console.log('value-loaded');
+            console.log(this.props.value.icon);
+            return (this.props.value.icon);
+
+        }
+        else {
+            console.log('no value')
+        }
+
+    }
+
 
 
     innerRendering = (active) => {
@@ -27,9 +43,11 @@ class ValueSlider extends Component {
 
     render() {
 
+
         return (
             <div className="value-slider-plate">
                 <Frame size="thin">
+                    {this.getIcon()}
                 {this.innerRendering(this.state.active)}
                 </Frame>
             </div>
