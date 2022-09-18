@@ -12,6 +12,7 @@ class ValueListItem extends Component {
     value = this.props.value;
     
     pressAction = () => {
+        //TODO: prevent selection of more than 8 values
         let newSelectedState = this.state.selected ? false : true
         this.setState({selected : newSelectedState})
 

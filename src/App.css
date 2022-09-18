@@ -540,6 +540,8 @@ h2 {
 
 
 
+
+
 /*
   ========================================
   Output Panel
@@ -715,6 +717,7 @@ h2 {
 
 .value-slider-plate {
   flex-grow: 1;
+  height: 224px;
 
 }
 
@@ -733,4 +736,32 @@ h2 {
   box-shadow: inset 2px 2px 2px rgb(0 0 0 / 25%);
     filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.4));
 }
+
+.value-slider-plate .icon {
+  display: block;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  padding: 8px 0;
+  background: var(--parchment);
+}
+
+.value-slider-plate .spacer {
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 100%;
+}
+
+.value-slider-plate input {
+  /* position: absolute; */
+  /* display: block; */
+  /* bottom: 0; */
+  /* transform: rotate(270deg); */
+  /* rotate: 270deg; */
+
+
+  width: 100%;
+}
+
 

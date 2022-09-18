@@ -371,6 +371,7 @@ class App extends Component {
   } 
 
   // callback to update the selected values
+  //TODO: prevent selection of more than 8 values
   updateSelectedValues = (value, selected) => {
     let newValues = this.state.selectedValues;
 

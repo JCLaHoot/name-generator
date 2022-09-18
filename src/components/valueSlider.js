@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import Frame from "./frame";
+import Spacer from "./spacer";
 
 class ValueSlider extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            active: false,
             sliderValue: 0
         };
     }
@@ -15,24 +15,18 @@ class ValueSlider extends Component {
     icon = null;
 
 
-    getIcon = () => {
-        if(this.props.value) {
-            console.log('value-loaded');
-            console.log(this.props.value.icon);
-            return (this.props.value.icon);
-
-        }
-        else {
-            console.log('no value')
-        }
-
-    }
 
 
+    innerRendering = () => {
+        let active = false;
 
-    innerRendering = (active) => {
+        (this.props.value) ? active = true : active = false;
+
         if (active) {
-            return <div>Actual values slider 
+            return <div className="slider-content">
+                <span className="icon">{this.props.value.icon}</span>
+                <Spacer size='thin'/>
+                <input type="range" min="1" max="5" value="2.5" className="slider"/>
             </div>;
         }
         else {
@@ -47,7 +41,6 @@ class ValueSlider extends Component {
         return (
             <div className="value-slider-plate">
                 <Frame size="thin">
-                    {this.getIcon()}
                 {this.innerRendering(this.state.active)}
                 </Frame>
             </div>
